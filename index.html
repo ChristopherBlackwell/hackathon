@@ -125,13 +125,13 @@ function postImage(file)
 
   $.ajax({
                       url:"https://www.googleapis.com/upload/storage/v1/b/nameplate_photos/o?uploadType=media&name=web_images.jpg",
-                      headers: {"Content-Type": 'image/jpeg', "Authorization": 'Bearer ya29.GlvsBBIMR6f6EyEOk0QNZPVTcTe-HQYoqGLTn1bXQtuynFRpNnjx2wHLnmp9xhjQaQadCkOk0WIXyEhy4YC-eugoj7mq98UBfYcThLztcAQbegWsynzsCZLuvX0w'}
+                      headers: {"Content-Type": 'image/jpeg', "Authorization": 'Bearer ya29.GlvsBBIMR6f6EyEOk0QNZPVTcTe-HQYoqGLTn1bXQtuynFRpNnjx2wHLnmp9xhjQaQadCkOk0WIXyEhy4YC-eugoj7mq98UBfYcThLztcAQbegWsynzsCZLuvX0w'},
                       type: "POST",
                       data: new FormData(file),
                       contentType:false,
                       cache: false,
                       processData:false,
-                      success:function (msg) {console.log(message)}
+                      success:function (msg) {console.log('message')}
                     });
 
   /*$.ajax({
