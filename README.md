@@ -15,3 +15,7 @@ which these technicians may want to retrieve on the spot are the following:
 
 # Run
  Open `index.html`
+
+# Challenges
+The Authentication token needed to be refreshed each hour. Being limited by time, we found more value in manually resetting the `auth token` each hour rather than developing a more scalable and industrial solution.
+
