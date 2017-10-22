@@ -23,26 +23,6 @@
   </style>
 </head>
 <body>
-
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAo-6SZcjQyrsaYto_lEG3jbnKOu26DBwc",
-      authDomain: "hack-ohio-nameplate.firebaseapp.com",
-      databaseURL: "https://hack-ohio-nameplate.firebaseio.com",
-      projectId: "hack-ohio-nameplate",
-      storageBucket: "hack-ohio-nameplate.appspot.com",
-      messagingSenderId: "182649501621"
-    };
-    firebase.initializeApp(config);
-  </script>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
   <div class="container">
     <div class="row">
       <div class="col-3">
@@ -70,24 +50,6 @@
     </div>
   </div>
 
-  <!--  <div class="row">
-  <div class="col">
-</div>
-<div class="col">
-<div class="dropdown">
-<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Options
-</button>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="#">History</a>
-<a class="dropdown-item" href="#">Contact Us</a>
-</div>
-</div>
-</div>
-<div class="col">
-</div>
-</div> -->
-
 <div id="table_display">
   <div class="row">
     <div class="col">
@@ -107,6 +69,10 @@ Options
             <td>GO#/PO#</td>
             <td id="GO_var">Variable</td>
           </tr>
+          <tr>
+            <td>Raw</td>
+            <td id="raw_var">Variable</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -116,6 +82,20 @@ Options
 </div>
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBj4pcYp-J5pspW6lm2FO4Zsqk2Rw_axhc",
+    authDomain: "hackohio2017-9e3d9.firebaseapp.com",
+    databaseURL: "https://hackohio2017-9e3d9.firebaseio.com",
+    projectId: "hackohio2017-9e3d9",
+    storageBucket: "hackohio2017-9e3d9.appspot.com",
+    messagingSenderId: "769975247793"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script> $('#table_display').hide() </script>;
 
 <!--This is the section that creates the image -->
@@ -156,20 +136,6 @@ function postImage(file)
                       processData:false,
                       success:function (msg) {console.log(msg)}
                     });
-
-  /*$.ajax({
-      url: 'https://www.googleapis.com/upload/storage/v1/b/nameplate_photos/o?uploadType=media&name=web_images.jpg',
-      type: 'POST',
-      data: file,
-      headers: {
-          "Authorization": 'Bearer ya29.GlvsBBIMR6f6EyEOk0QNZPVTcTe-HQYoqGLTn1bXQtuynFRpNnjx2wHLnmp9xhjQaQadCkOk0WIXyEhy4YC-eugoj7mq98UBfYcThLztcAQbegWsynzsCZLuvX0w',   //If your header name has spaces or any other char not appropriate
-          "Content-Type": 'image/jpeg'  //for object property name, use quoted notation shown in second
-      },
-      "Content-Type": 'image/jpeg',
-      success: function (data) {
-          console.info(data);
-      }
-    });*/
 }
 </script>
 
