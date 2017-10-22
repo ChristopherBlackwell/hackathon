@@ -37,7 +37,7 @@
       </div>
       <div class="col">
         <h2>
-          <input type='file' onchange="readURL(this);" />
+          <input type='file' onchange="readURL(this)" />
           <img id="The_Image" src="#" alt="" />
         </h2>
       </div>
@@ -100,12 +100,11 @@ Options
 
 <!--This is the section that creates the image -->
 <script>
+
 function readURL(input) {
   if (input.files && input.files[0]) {
     alert("you\'ve got mail");
     //Manipulate table values here
-
-
     $('#table_display').show();
 
     var reader = new FileReader();
@@ -116,10 +115,37 @@ function readURL(input) {
       .width("100%")
       .height("100%");
     };
+    postImage(input.files[0]);
     reader.readAsDataURL(input.files[0]);
   }
 }
+function postImage(file)
+{
 
+  $.ajax({
+                      url:"",
+                      type: "POST",
+                      data: new FormData(file),
+                      contentType:false,
+                      cache: false,
+                      processData:false,
+                      success:function (msg) {console.log(message)}
+                    });
+
+  /*$.ajax({
+      url: 'https://www.googleapis.com/upload/storage/v1/b/nameplate_photos/o?uploadType=media&name=web_images.jpg',
+      type: 'POST',
+      data: file,
+      headers: {
+          "Authorization": 'Bearer ya29.GlvsBBIMR6f6EyEOk0QNZPVTcTe-HQYoqGLTn1bXQtuynFRpNnjx2wHLnmp9xhjQaQadCkOk0WIXyEhy4YC-eugoj7mq98UBfYcThLztcAQbegWsynzsCZLuvX0w',   //If your header name has spaces or any other char not appropriate
+          "Content-Type": 'image/jpeg'  //for object property name, use quoted notation shown in second
+      },
+      "Content-Type": 'image/jpeg',
+      success: function (data) {
+          console.info(data);
+      }
+    });*/
+}
 </script>
 
 <script src="main.js"></script>
