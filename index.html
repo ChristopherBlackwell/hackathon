@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
   <div class="container">
     <div class="row">
@@ -46,54 +46,54 @@
     </div>
   </div>
 
-<!--  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Options
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">History</a>
-          <a class="dropdown-item" href="#">Contact Us</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-    </div>
-  </div> -->
+  <!--  <div class="row">
+  <div class="col">
+</div>
+<div class="col">
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Options
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">History</a>
+<a class="dropdown-item" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="col">
+</div>
+</div> -->
 
-  <div id="table_display">
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="col">
-        <table class="table table-striped">
-          <tbody>
-            <tr>
-              <td>Brand</td>
-              <td>Variable</td>
-            </tr>
-            <tr>
-              <td>Catalog/Style Number</td>
-              <td>Variable</td>
-            </tr>
-            <tr>
-              <td>GO#/PO#</td>
-              <td>Variable</td>
-            </tr>
-            <tr>
-              <td>Range</td>
-              <td>Variable</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col">
-      </div>
+<div id="table_display">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>Brand</td>
+            <td id="brand_var">Variable</td>
+          </tr>
+          <tr>
+            <td>Catalog/Style Number</td>
+            <td id="catalog_var">Variable</td>
+          </tr>
+          <tr>
+            <td>GO#/PO#</td>
+            <td id="GO_var">Variable</td>
+          </tr>
+          <tr>
+            <td>Range</td>
+            <td id="range_var">Variable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
     </div>
   </div>
+</div>
 </body>
 
 <script> $('#table_display').hide() </script>;
@@ -103,6 +103,9 @@
 function readURL(input) {
   if (input.files && input.files[0]) {
     alert("you\'ve got mail");
+    //Manipulate table values here
+
+
     $('#table_display').show();
 
     var reader = new FileReader();

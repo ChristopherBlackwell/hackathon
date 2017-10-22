@@ -5,7 +5,7 @@ $(document).ready(function()
   if (after_upload == false)
   {
     $('#pic_display').hide();
-    */$('#table_display').hide();/*
+    $('#table_display').hide();
   }
 
   $("input[type=file]").click(function()
