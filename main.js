@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-  var after_upload = 0;
+  /*var after_upload = 0;
 
   if (after_upload == false)
   {
@@ -27,5 +27,7 @@ $(document).ready(function()
       $('#table_display').show();
     }
 
-  });
+  });*/
+
+  }
 });

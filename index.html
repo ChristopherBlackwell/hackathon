@@ -2,20 +2,22 @@
 <html lane="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-<meta charset=utf-8 />
-<title>Hackathon 2017 Image Analysis</title>
-<!--[if IE]>
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <meta charset=utf-8 />
+  <title>Hackathon 2017 Image Analysis</title>
+  <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<style>
+  <![endif]-->
+  <style>
   article, aside, figure, footer, header, hgroup,
   menu, nav, section { display: block; }
-</style>
+  </style>
 </head>
 <body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
   <div class="container">
     <div class="row">
@@ -36,7 +38,7 @@
       <div class="col">
         <h2>
           <input type='file' onchange="readURL(this);" />
-            <img id="blah" src="#" alt="your image" />
+          <img id="The_Image" src="#" alt="" />
         </h2>
       </div>
       <div class="col">
@@ -44,86 +46,82 @@
     </div>
   </div>
 
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="col">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Options
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">History</a>
-            <a class="dropdown-item" href="#">Contact Us</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-      </div>
-    </div>
+  <!--  <div class="row">
+  <div class="col">
+</div>
+<div class="col">
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Options
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">History</a>
+<a class="dropdown-item" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="col">
+</div>
+</div> -->
 
-    <div id="pic_display">
-      <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-          <img width="50" height="50" alt="Uploaded Image" />
-        </div>
-        <div class="col">
-        </div>
-      </div>
+<div id="table_display">
+  <div class="row">
+    <div class="col">
     </div>
-
-    <div id="table_display">
-      <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <td>Brand</td>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <td>Catalog/Style Number</td>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <td>GO#/PO#</td>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <td>Range</td>
-                <td>Variable</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col">
-        </div>
-      </div>
+    <div class="col">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>Brand</td>
+            <td id="brand_var">Variable</td>
+          </tr>
+          <tr>
+            <td>Catalog/Style Number</td>
+            <td id="catalog_var">Variable</td>
+          </tr>
+          <tr>
+            <td>GO#/PO#</td>
+            <td id="GO_var">Variable</td>
+          </tr>
+          <tr>
+            <td>Range</td>
+            <td id="range_var">Variable</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
 </body>
+
+<script> $('#table_display').hide() </script>;
 
 <!--This is the section that creates the image -->
 <script>
 function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+  if (input.files && input.files[0]) {
+    alert("you\'ve got mail");
+    //Manipulate table values here
 
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .width("100%")
-                    .height("100%");
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-  </script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<!--<script src="main.js"></script>-->
+    $('#table_display').show();
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#The_Image')
+      .attr('src', e.target.result)
+      .width("100%")
+      .height("100%");
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+</script>
+
+<script src="main.js"></script>
 
 </html>
